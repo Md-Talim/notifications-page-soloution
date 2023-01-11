@@ -1,6 +1,7 @@
 const readToggleBtn = document.querySelector(".read-toggle-btn");
 const unreadMessages = document.querySelectorAll(".unread-message");
 const redIcon = document.querySelectorAll(".unread-icon");
+const notificationCount = document.querySelector("#notification-count");
 
 const removeStyle = () => {
   unreadMessages.forEach((message) => {
@@ -14,7 +15,8 @@ const toggleRead = () => {
 
     if (isReaded) {
       icon.classList.remove("unread");
-      readToggleBtn.setAttribute('aria-disabled', 'true');
+      readToggleBtn.setAttribute("aria-disabled", "true");
+      notificationCount.textContent = 0;
       removeStyle();
     }
   });
