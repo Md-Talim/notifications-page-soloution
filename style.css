@@ -1,0 +1,287 @@
+:root {
+  /* Primary */
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+
+  /* ### Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+
+  --ff-primary: "Plus Jakarta Sans", sans-serif;
+
+  --fw-500: 500;
+  --fw-800: 800;
+
+  --fs-300: 0.6875rem;
+  --fs-400: 0.8125rem;
+  --fs-450: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --border-radius: 0.3rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove defualt margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* a elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefer-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* Styles */
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--very-light-grayish-blue);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: min(46em, 99%);
+  background: var(--white);
+  /* margin-block: clamp(0, 1vh, 10rem); */
+  margin-block: 4em;
+  padding-inline: 2.1rem;
+  border-radius: 1rem;
+  box-shadow: 3.1px 3.3px 8.6px rgba(0, 0, 0, 0.016),
+    10.3px 11.2px 28.8px rgba(0, 0, 0, 0.024),
+    46px 50px 129px rgba(0, 0, 0, 0.04);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1.8rem 1.6rem;
+}
+
+.header h1 {
+  display: flex;
+  place-items: center;
+  gap: 0.5em;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-800);
+}
+
+.header h1 span {
+  display: flex;
+  place-items: center;
+  font-size: var(--fs-450);
+  font-weight: var(--fw-500);
+  color: var(--white);
+  background-color: var(--blue);
+  /* padding-block: .01em 0.2em; */
+  padding-bottom: 0.1em;
+  padding-inline: 0.7em;
+  border-radius: var(--border-radius, 0.5rem);
+}
+
+.read-toggle-btn {
+  color: var(--very-dark-blue);
+  font-size: var(--fw-500);
+  text-decoration: none;
+}
+
+.read-toggle-btn:hover {
+  color: var(--blue);
+}
+
+.read-toggle-btn[aria-disabled=true] {
+  cursor: not-allowed;
+  color: var(--light-grayish-blue-2);
+}
+
+.message:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+
+.message {
+  display: flex;
+  padding: 1rem;
+  border: 2px solid transparent;
+}
+
+.unread-message {
+  background-color: var(--very-light-grayish-blue);
+  border-radius: var(--border-radius);
+}
+
+.profile-picture {
+  width: 2.86rem;
+  height: 2.86rem;
+  aspect-ratio: 1;
+  margin-right: 1.2rem;
+  transition: transform 0.5s linear;
+}
+
+.profile-picture:hover,
+.post-img:hover {
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.message__description {
+  color: var(--grayish-blue);
+  font-size: var(--fs-450);
+}
+
+.name {
+  color: var(--very-dark-blue);
+  font-weight: var(--fw-800);
+  margin-right: 0.3rem;
+}
+
+.name:hover,
+.caption:hover,
+.group:hover {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.caption {
+  color: var(--dark-grayish-blue);
+  font-weight: var(--fw-800);
+  margin-left: 0.3rem;
+}
+
+.time {
+  color: var(--grayish-blue);
+}
+
+.group {
+  color: var(--blue);
+  font-weight: var(--fw-800);
+  margin-left: 0.2rem;
+}
+
+.private-message p {
+  border: .01rem solid var(--grayish-blue);
+  color: var(--grayish-blue);
+  width: 84.5%;
+  padding: 1.1rem;
+  line-height: 1.3;
+  border-radius: var(--border-radius);
+  margin-left: 12.5%;
+  margin-top: -0.9rem;
+  margin-bottom: 1.5rem;
+  transition: background-color, border-color 0.3s linear;
+}
+
+.private-message p:hover {
+  background-color: var(--light-grayish-blue-1);
+  color: var(--grayish-blue);
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.post-comment {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.post-img {
+  width: 2.8rem;
+  transition: transform 0.3s linear;
+}
+
+.unread {
+  display: inline-block;
+  width: 0.5rem;
+  aspect-ratio: 1;
+  background-color: var(--red);
+  border-radius: 50%;
+  margin-left: 0.3rem;
+}
+
+@media screen and (max-width: 38em) {
+  html {
+    font-size: 85%;
+  }
+
+  .container {
+    margin-block: 0;
+  }
+}
