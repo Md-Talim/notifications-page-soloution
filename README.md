@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here]()
+- Solution URL: [Click here](https://www.frontendmentor.io/solutions/notifications-page-Tnt9O-gS3g)
 - Live Site URL: [Click here](https://md-talim.github.io/notifications-page-solution)
 
 ## My process
